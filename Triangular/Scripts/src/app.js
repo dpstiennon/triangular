@@ -19,7 +19,10 @@ TriangleCtrl.prototype.removeTriangle = function(index) {
 }
 
 TriangleCtrl.prototype.classify = function() {
-    this.triangles = this.triangles.map(t => Object.assign(t, { type: 'Scalene' }));
+    const submitter = this.triangles.map(t => t.sides);
+    this.$http.post('/api/triangle', submitter).then(res => {
+        this.triangles.forEach((tri, idx) => tri.type = res.data[idx]);
+    });
 }
 
 

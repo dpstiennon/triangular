@@ -4,10 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Triangular.Models;
 
 namespace Triangular.Controllers
 {
-    public class ValuesController1 : ApiController
+    public class TriangleController : ApiController
     {
         // GET api/<controller>
         public IEnumerable<string> Get()
@@ -21,9 +22,12 @@ namespace Triangular.Controllers
             return "value";
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        // POST api/triangle
+        public IEnumerable<string> Post([FromBody] List<List<decimal>> triangles)
         {
+            var triangleLogic = new TriangleLogic();
+            var classifications = triangles.Select(triangle => triangleLogic.Classify(triangle));
+            return classifications;
         }
 
         // PUT api/<controller>/5
