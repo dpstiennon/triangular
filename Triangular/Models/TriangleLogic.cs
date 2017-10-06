@@ -39,7 +39,7 @@ namespace Triangular.Models
             {
                 return "Scalene: Obtuse";
             }
-            return "Scalne: Acute";
+            return "Scalene: Acute";
         }
 
         public bool IsIsosceles(List<decimal> sides)
@@ -58,7 +58,7 @@ namespace Triangular.Models
             var othersSides = sides.OrderByDescending(x => x).Skip(1);
             return sides.Count() != 3
                    || sides.Any(s => s <= 0)
-                   || maxSide > othersSides.Sum();
+                   || maxSide >= othersSides.Sum();
         }
     }
 }
