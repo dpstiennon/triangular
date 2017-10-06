@@ -10,7 +10,7 @@ namespace Triangular.Models
     {
         public string Classify(List<decimal> sides)
         {
-            if (IsNotATriangle(sides))
+            if (sides == null || IsNotATriangle(sides))
             {
                 return "Not a Triangle";
             }
@@ -27,15 +27,16 @@ namespace Triangular.Models
 
         public string ScaleneClass(List<decimal> sides)
         {
+            //Pythagorean Theorem used to classify Scalene triangles
             var maxSide = sides.Max();
             var othersSides = sides.OrderByDescending(x => x).Skip(1);
-            var aSquaredPlusBSquare = othersSides.Sum(x => x * x);
+            var aSquaredPlusBSquared = othersSides.Sum(x => x * x);
             var cSquared = maxSide*maxSide;
-            if (aSquaredPlusBSquare == cSquared)
+            if (aSquaredPlusBSquared == cSquared)
             {
                 return "Scalene: Right";
             }
-            if (aSquaredPlusBSquare < cSquared)
+            if (aSquaredPlusBSquared < cSquared)
             {
                 return "Scalene: Obtuse";
             }

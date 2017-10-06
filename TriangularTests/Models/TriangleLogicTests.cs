@@ -105,6 +105,13 @@ namespace Triangular.Models.Tests
             Assert.AreEqual("Not a Triangle", result);
         }
 
+        [TestMethod]
+        public void NullIsNotATriangle()
+        {
+            var result = classifier.Classify(null);
+            Assert.AreEqual("Not a Triangle", result);
+        }
+
 
 
 
