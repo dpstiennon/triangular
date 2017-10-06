@@ -8,21 +8,38 @@
             <h3 class="col-md-2 col-md-offset-1">Side 1</h3>
             <h3 class="col-md-2">Side 2</h3>
             <h3 class="col-md-2">Side 3</h3>
+            <h3 class="col-md-2">Classification</h3>
         </div>
         <div class="row form-group" ng-repeat="t in tCtrl.triangles">
             <div class="col-md-1">
-                <button class="btn btn-sm btn-danger">
+                <button class="btn btn-sm btn-danger" ng-click="tCtrl.removeTriangle($index)">
                     <i class="glyphicon glyphicon-minus"></i>
                 </button>
             </div>
-            <input type="number" class="form-control col-md-2"value="" />
-            <input type="number" class="form-control col-md-2"value="" />
-            <input type="number" class="form-control col-md-2"value="" />
+            <div class="col-md-2">
+                <input type="number" ng-model="t.sides[0]" class="form-control" value="" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" ng-model="t.sides[1]" class="form-control" value="" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" ng-model="t.sides[2]" class="form-control" value="" />
+            </div>
+            <div class="col-md-2">
+                <span>{{t.type}}</span>
+            </div>
         </div>
         <div class="row">
-            <button class="btn btn-sm btn-success">
-                <i class="glyphicon glyphicon-plus"></i>
-            </button>
+            <div class="col-md-1">
+                <button class="btn btn-sm btn-success" ng-Click="tCtrl.addTriangle()">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-10">
+                <button class="btn btn-default" ng-click="tCtrl.classify()">Classify</button>
+            </div>
         </div>
     </div>
 
