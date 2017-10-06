@@ -4,11 +4,11 @@
 
 <div ng-app="triangular">
     <div ng-controller="TriangleCtrl as tCtrl">
-        <div class="row hidden-sm">
-            <h3 class="col-md-2 col-md-offset-1">Side 1</h3>
-            <h3 class="col-md-2">Side 2</h3>
-            <h3 class="col-md-2">Side 3</h3>
-            <h3 class="col-md-2">Classification</h3>
+        <div class="row">
+            <h3 class="col-md-2 col-xs-3 col-md-offset-1">Side 1</h3>
+            <h3 class="col-md-2 col-xs-3">Side 2</h3>
+            <h3 class="col-md-2 col-xs-3">Side 3</h3>
+            <h3 class="col-md-2 col-xs-3">Classification</h3>
         </div>
         <div class="row form-group" ng-repeat="t in tCtrl.triangles">
             <div class="col-md-1">
@@ -16,16 +16,16 @@
                     <i class="glyphicon glyphicon-minus"></i>
                 </button>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-3">
                 <input type="number" ng-model="t.sides[0]" class="form-control" value="" />
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-3">
                 <input type="number" ng-model="t.sides[1]" class="form-control" value="" />
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-3">
                 <input type="number" ng-model="t.sides[2]" class="form-control" value="" />
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-3">
                 <span>{{t.type}}</span>
             </div>
         </div>
