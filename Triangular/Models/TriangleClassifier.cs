@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Triangular.Models
 {
-    public class TriangleLogic
+    public class TriangleClassifier
     {
         public string Classify(List<decimal> sides)
         {
@@ -25,7 +25,7 @@ namespace Triangular.Models
             return ScaleneClass(sides);
         }
 
-        public string ScaleneClass(List<decimal> sides)
+        private string ScaleneClass(List<decimal> sides)
         {
             //Pythagorean Theorem used to classify Scalene triangles
             var maxSide = sides.Max();
@@ -43,17 +43,17 @@ namespace Triangular.Models
             return "Scalene: Acute";
         }
 
-        public bool IsIsosceles(List<decimal> sides)
+        private bool IsIsosceles(List<decimal> sides)
         {
             return sides.Distinct().Count() < 3;
         }
 
-        public bool IsEquilateral(List<decimal> sides)
+        private bool IsEquilateral(List<decimal> sides)
         {
             return sides.Distinct().Count() < 2;
         }
 
-        public bool IsNotATriangle(List<decimal> sides)
+        private bool IsNotATriangle(List<decimal> sides)
         {
             var maxSide = sides.Max();
             var othersSides = sides.OrderByDescending(x => x).Skip(1);

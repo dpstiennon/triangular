@@ -13,7 +13,7 @@ namespace Triangular.Controllers
         // POST api/triangle
         public IEnumerable<string> Post([FromBody] List<List<decimal>> triangles)
         {
-            var triangleLogic = new TriangleLogic();
+            var triangleLogic = new TriangleClassifier();
             var classifications = triangles.Select(triangle => triangleLogic.Classify(triangle));
             return classifications;
         }

@@ -1,4 +1,4 @@
-##Welcome!  
+## Welcome!  
 
 This is a simple web app build on the Angular/C#/MVC/WebAPI stack for Flexion's coding challenge.  
 

@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Triangular.Models.Tests
 {
     [TestClass()]
-    public class TriangleLogicTests
+    public class TriangleClassifierTests
     {
-        private TriangleLogic classifier;
+        private TriangleClassifier classifier;
 
         [TestInitialize()]
         public void Setup()
         {
-            classifier = new TriangleLogic();
+            classifier = new TriangleClassifier();
         }
 
         private List<decimal> TestTriangle(double a, double b, double c)
@@ -111,11 +111,5 @@ namespace Triangular.Models.Tests
             var result = classifier.Classify(null);
             Assert.AreEqual("Not a Triangle", result);
         }
-
-
-
-
-
-
     }
 }
